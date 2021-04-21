@@ -2,7 +2,7 @@ class OptionsManager:
 	def __init__(self):
 		pass
 
-	def show_options(options):
+	def show_options(self, options):
 		for option in options:
 			print (f'{options.index(option) + 1}. option.string')
 

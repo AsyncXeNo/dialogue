@@ -19,6 +19,7 @@ class Game:
         self.clock = pygame.time.Clock()
 
         self.dialogue_manager = DialogueManager()
+        print("Activated")
         self.dialogue_manager.activate()
         self.dialogue_manager.set_active_dialogue("person1")
 
@@ -29,7 +30,7 @@ class Game:
                 sys.exit()
 
             if event.type == pygame.MOUSEBUTTONDOWN:
-                dialogue_manager.trigger_dialogue()
+                self.dialogue_manager.trigger_dialogue()
 
     def key_handler(self):
         pass
@@ -49,8 +50,6 @@ class Game:
             self.key_handler()
             self.graphics_handler()
 
-
-game = Game()
-
 if __name__ == "__main__":
+    game = Game()
     game.run()

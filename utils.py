@@ -27,10 +27,6 @@ def get_options(name):
 
 	return options_list
 
-
-print(get_options("person1"))
-
-
 def get_dialogue(name):
 	list_of_dialogues = []
 	for dialogue in dialogues_object:
@@ -46,15 +42,16 @@ def get_dialogue(name):
 				options_list = None
 
 				if options != None:
-					print(f'options for dialogue {individual_dialogue["id"]} exist')
+					#print(f'options for dialogue {individual_dialogue["id"]} exist')
 					for option in get_options(name):
 						if option["id"] == options:
 							options_list = option["list"]
 
-				print(options_list)
+				#print(options_list)
 
 				if options_list:
-					print(f'options given to dialogue with id {individual_dialogue["id"]}')
+					#print(f'options given to dialogue with id {individual_dialogue["id"]}')
+					pass
 
 				list_of_dialogues.append({
 					"id": individual_dialogue["id"],
@@ -65,4 +62,5 @@ def get_dialogue(name):
 
 
 for dialogue in get_dialogue('person1'):
-	print(dialogue["dialogue"])
+	#print(dialogue["dialogue"])
+	pass
