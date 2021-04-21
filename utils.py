@@ -39,25 +39,30 @@ def get_dialogue(name):
 
 				name = individual_dialogue["name"]
 				string = individual_dialogue["string"]
+				id_ = individual_dialogue["id"]
 				options = individual_dialogue["options"]
 				next_dialogue = individual_dialogue["next"]
 
 				options_list = None
 
-				if options:
-					for option in get_options("person1"):
+				if options != None:
+					print(f'options for dialogue {individual_dialogue["id"]} exist')
+					for option in get_options(name):
 						if option["id"] == options:
 							options_list = option["list"]
 
+				print(options_list)
+
 				if options_list:
 					print(f'options given to dialogue with id {individual_dialogue["id"]}')
+
 				list_of_dialogues.append({
 					"id": individual_dialogue["id"],
-					"dialogue": Dialogue(name, string, options_list, next_dialogue)
+					"dialogue": Dialogue(name, string, id_, options_list, next_dialogue)
 				})	
 
 	return list_of_dialogues
 
 
-for dialogue in get_dialogue("person1"):
+for dialogue in get_dialogue('person1'):
 	print(dialogue["dialogue"])

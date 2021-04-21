@@ -1,6 +1,8 @@
 import pygame
 import sys
 
+from dialogue_manager import DialogueManager
+
 
 class Game:
     def __init__(self):
@@ -16,11 +18,18 @@ class Game:
 
         self.clock = pygame.time.Clock()
 
+        self.dialogue_manager = DialogueManager()
+        self.dialogue_manager.activate()
+        self.dialogue_manager.set_active_dialogue("person1")
+
     def event_handler(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                dialogue_manager.trigger_dialogue()
 
     def key_handler(self):
         pass

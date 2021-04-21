@@ -10,7 +10,7 @@ class Dialogue:
         self.event_to_trigger = event_to_trigger
 
     def __str__(self):
-        return f'{self.name}: {self.string} [Options: {"Yes" if self.options else "No"}] [Next: {self.next}]'
+        return f'{self.name}: {self.string} [Options: {"Yes" if self.options != None else "No"}] [Next: {self.next}]'
 
     def init_options(self):
         self.options = []
