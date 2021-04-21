@@ -13,7 +13,8 @@
         "name": "person1",
         "id": 1,
         "string": "Wanna go to movie tonight?",
-        "options": 0
+        "options": 0,
+        "next": null
       },
       {
         "name": "person2",
