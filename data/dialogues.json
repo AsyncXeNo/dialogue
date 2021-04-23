@@ -35,12 +35,12 @@
         "id": 2,
         "string": "damn rude...",
         "options": null,
-        "next": 4
+        "next": null
       },
       {
         "name": "person1",
         "id": 3,
-        "string": "epic",
+        "string": "obama",
         "options": null,
         "next": null
       }

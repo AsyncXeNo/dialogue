@@ -1,10 +1,24 @@
+import pygame
+pygame.init()
+
 class OptionsManager:
 	def __init__(self):
-		pass
+		self.active = False
+		self.options = []
 
-	def show_options(self, options):
-		for option in options:
-			print (f'{options.index(option) + 1}. option.string')
+	def activate(self):
+		self.active = True
+
+	def deactivate(self):
+		self.active = False
+		self.options = []
+
+	def set_options(self, options):
+		self.options = options
+
+	def show_options(self):
+		for option in self.options:
+			print (f'{self.options.index(option) + 1}. {option.string}')
 
 		while True:
 			number = input('type the number of option to choose and press enter.')
@@ -14,11 +28,11 @@ class OptionsManager:
 				print('please input a number')
 				continue
 
-			if number < 1 or number > len(options):
+			if number < 1 or number > len(self.options):
 				print('pls enter a valid option number')
 				continue
 
 			else:
 				break
 
-		return options[number -1].dialogue_id
+		return self.options[number -1].dialogue_id
