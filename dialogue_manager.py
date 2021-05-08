@@ -26,7 +26,7 @@ class DialogueManager:
 		except:
 			print(f'no dialogue named {name}.')
 
-		self.current_dialogue_id = self.dialogues_list[0]["id"]
+		self.set_current_dialogue_id(self.dialogues_list[0]["id"])
 
 	def set_current_dialogue_id(self, id):
 		self.current_dialogue_id = id
@@ -35,6 +35,8 @@ class DialogueManager:
 	def trigger_dialogue(self):
 
 		if self.active:
+
+            current_dialogue = None
 
 			for dialogue in self.dialogues_list:
 				if dialogue["id"] == self.current_dialogue_id:
